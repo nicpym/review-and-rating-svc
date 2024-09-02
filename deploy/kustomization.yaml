@@ -9,6 +9,6 @@ commonLabels:
   app: review-and-rating-svc
   backstage.io/kubernetes-id: review-and-rating-svc
 images:
-- name: to-be-replaced
-  newName: ealen/echo-server
-  newTag: latest
+  - name: to-be-replaced
+    newName: ghcr.io/nicpym/review-and-rating-svc
+    newTag: v0.0.1
