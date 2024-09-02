@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-and-rating-svc
+spec:
+  selector:
+    matchLabels:
+      app: review-and-rating-svc
+  template:
+    metadata:
+      labels:
+        app: review-and-rating-svc
+    spec:
+      containers:
+      - name: review-and-rating-svc
+        image: to-be-replaced:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"

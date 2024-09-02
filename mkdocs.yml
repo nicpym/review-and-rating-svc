@@ -1,0 +1,7 @@
+site_name: 'review-and-rating-svc-docs'
+site_description: Review and Rating Service
+nav:
+  - Overview: index.md
+
+plugins:
+  - techdocs-core

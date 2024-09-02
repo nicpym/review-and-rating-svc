@@ -1,0 +1,39 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: review-and-rating-svc
+  description: Review and Rating Service
+  annotations:
+    backstage.io/kubernetes-id: review-and-rating-svc
+    backstage.io/kubernetes-namespace: workloads
+    backstage.io/kubernetes-cluster: team-a-cluster
+    github.com/project-slug: nicpym/review-and-rating-svc
+    argocd/app-name: review-and-rating-svc
+    argocd/app-namespace: team-a-cluster
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - python
+    - fastapi
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/team-a
+  system: connect-demo
+  dependsOn:
+    - resource:default/team-a-cluster
+  providesApis:
+    - review-and-rating-svc
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: review-and-rating-svc
+  description: Review and Rating Service
+  tags:
+    - rest
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/team-a
+  definition:
+    $text: ./openapi.yaml
